@@ -1,0 +1,19 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "mediant",
+  "main": "src/worker.js",
+  "compatibility_date": "2026-11-01",
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS",
+    "run_worker_first": ["/api/*"]
+  },
+  "vars": {
+    "SUPABASE_URL": "https://veoxasldburbztzucyrn.supabase.co",
+    "SUPABASE_KEY": "sb_publishable_Gwnaqzgzz-Abvn5hiQvhsw_32P5goIo",
+    "CLAUDE_MODEL": "claude-sonnet-5-5"
+  }
+  // Secrets (set in the Cloudflare dashboard or with `wrangler secret put`):
+  //   ANTHROPIC_API_KEY   - Claude API key
+  //   MEDIANT_WORKER_KEY  - key that lets the Worker write mediator messages
+}
